@@ -1,0 +1,58 @@
+\input{ljhw_header.tex}
+\input{ljminted}
+
+\name{Jin Li}
+\class{NERS 551}
+\assignment{Homework 1}
+\duedate{\today}
+
+\begin{document}
+
+\title{\vspace{-1cm} \textbf{Homework 1 Example} \vspace{-0.5cm}}
+\date{}
+\author{}
+\inlinemaketitle
+
+\begin{problem}[Question 1]
+
+Here is the description of Question 1.
+
+\end{problem}
+
+\begin{solution}
+
+Here is where your solution goes. \\
+
+Example of math expressions:
+\begin{align}
+    \frac{\ud p}{\ud t} &= \frac{\rho_1-\beta}{\Lambda}p+
+    \frac{1}{\Lambda}\lambda\xi \\
+    \frac{\ud p}{\ud t} &= -\lambda\xi+\beta p(t)
+\end{align}
+
+Example of a code block. To use the code block, you need to use \verb|\input{ljminted.tex}| at the beginning of this document.
+\begin{ljminted}{matlab}{backsubstitute.m}
+function x=back(U,b)
+% Use back substitute to solve U*x=b, U is upper triangular.
+
+[m,n]=size(U);
+x=zeros(n,1);
+for i=n:(-1):1
+    bb=b(i);
+    for j=(i+1):n
+        bb=bb-U(i,j)*x(j);
+    end
+    x(i)=bb/U(i,i);
+end
+\end{ljminted}
+
+\end{solution}
+
+\begin{problem}[Question 2]
+\end{problem}
+
+\begin{solution}
+Solution to Question 2.
+\end{solution}
+
+\end{document}

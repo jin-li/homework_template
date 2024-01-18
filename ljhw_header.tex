@@ -1,0 +1,148 @@
+%----------------------------------------------------------------
+% lijin's homework template
+% Modified by lijin, 11 Mar 2018
+% Use this file as input in main file: \input{ljhwh.tex}
+% Compile with cmdlet: xelatex -shell-escape eg.tex
+% -------Original Version---------------
+% HMC Math dept HW template example
+% v0.04 by Eric J. Malm, 10 Mar 2005
+%----------------------------------------------------------------
+\documentclass[12pt,letterpaper,boxed]{hmcpset}
+
+%----------
+% 已在其他文件中使用的宏包，请避免重复包含
+%----------
+\usepackage[svgnames,x11names]{xcolor}   % Has been used in latexample.tex
+
+% set 1-inch margins in the document
+\usepackage[margin=1in]{geometry}
+
+% include this if you want to import graphics files with /includegraphics
+\usepackage{graphicx}
+
+% include this to insert MATLAB code, this will also load package xcolor
+\usepackage[framed,numbered]{matlab-prettifier}
+
+%-----------
+% Define Colors
+%-----------
+%\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{LightGray}{gray}{0.9}
+
+%----------
+% 添加缩进为两个元素
+%----------
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+
+
+% No new page when make title
+\newcommand{\inlinemaketitle}{{\let\newpage\relax\maketitle}}
+
+% "d" for derivative in calculus should be non-italic
+\newcommand{\ud}{\mathrm{d}}
+
+%-----------
+% For chemical formula
+%-----------
+\usepackage[version=4]{mhchem}
+
+% SI units
+\usepackage{siunitx}
+%  Note that the sign must be
+%  µ
+%  MICRO SIGN
+%  Unicode: U+00B5, UTF-8: C2 B5
+% and \emph{not}
+%  μ
+%  GREEK SMALL LETTER MU
+%  Unicode: U+03BC, UTF-8: CE BC
+%\sisetup{math-micro=\text{µ},text-micro=µ}
+% Add a space before the unit
+\newcommand{\sis}{\ \si}
+% Add a quad space before the unit
+\newcommand{\siq}{\quad\si}
+
+% cancel in 
+\usepackage{cancel}
+
+% ordered listings
+\usepackage{enumitem}
+%\usepackage{enumerate}
+
+% Use the same counter in two enumerate environments
+% Or use \begin{enumerate}[resume]
+\makeatletter
+\def\saveenum{\xdef\@savedenum{\the\c@enumi\relax}}
+\def\resetenum{\global\c@enumi\@savedenum}
+\makeatother
+
+\usepackage{booktabs}
+\usepackage{diagbox}
+
+% For colored hyperlink
+% eg: \hypersetup{linkcolor=green,urlcolor=blue,citecolor=yellow,filecolor=purple}等
+\usepackage[colorlinks]{hyperref}
+\hypersetup{linkcolor=purple}
+\hypersetup{citecolor=RoyalBlue}
+\hypersetup{urlcolor=blue}
+%\usepackage[colorlinks,linkcolor=blue,urlcolor=blue]{hyperref}
+
+% For wrapped figures
+\usepackage{wrapfig}
+
+% For sub-figures
+\usepackage{subfigure}
+
+% For circuit plot
+%\usepackage{circ}
+%\usepackage[basic,box,gate,oldgate,ic,optics,physics]{circ}  
+\usepackage[european resistors]{circuitikz}
+\usepackage{pbox}
+\newcommand{\ctikzlabel}[2]{\pbox{\textwidth}{#1\\#2}} % 电路元件多行标签
+
+\usepackage{float}
+
+
+\usepackage{caption}
+
+%-----------
+% Reference style:
+% superscript, square bracket, sorted numbers
+%-----------
+\usepackage[super,square,sort&compress]{natbib}
+
+% For Japanese furigana（振り仮名）
+\usepackage{ruby}
+%\renewcommand{\rubysep}{0.2em} % Set verticle distance from kanji
+%\renewcommand{\rubysize}{0.5}  % Set furugana size
+
+%-----------
+% For code blocks
+% usage: \input{myminted.tex}
+%----------
+%\usepackage[cache=false]{minted}
+
+%----------
+% DO NOT include the packages multi-times!
+%----------
+\usepackage{fancyvrb} % Has been used in latexample.tex
+\usepackage{listings} % Has been used in latexample.tex
+
+% vectors with different types of arrows
+\usepackage{esvect} 
+ 
+% Chinese dash
+\newcommand{\cndash}{\ \rule{0.0em}{0pt}\rule[0.35em]{1.4em}{0.05em}\rule{0.2em}{0pt}}
+
+% bar with suitable length
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+%----------
+% info for header block in upper right hand corner.
+% You can use the following template.
+%----------
+%\name{Eric Malm}
+%\class{MA 198}
+%\assignment{Homework \#1}
+%\duedate{09/03/2004}
